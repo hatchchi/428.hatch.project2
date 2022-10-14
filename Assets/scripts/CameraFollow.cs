@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform targetBoard;
-    public Vector3 offset;
+    //public Vector3 offset;
     public bool airTravel;
 
    
@@ -26,17 +26,20 @@ public class CameraFollow : MonoBehaviour
         if (airTravel == true)
         {
             //Debug.Log("transform position.y = _____" + transform.position.y);
-            
-            if (targetBoard.position.y <= 3.61)
-            {
-                transform.position = targetBoard.position + offset;
-            }
-                
 
-            else
-            {
-               airTravel = false;
-            }
+            //if (targetBoard.position.y <= 3.61)
+            //{
+            // transform.position.y = targetBoard.position.y + offset;
+            //Debug.Log("targetBoard.transform.position.y is ___" + targetBoard.transform.position.y);
+            //Debug.Log("transform.position.y is ___" + transform.position.y);
+            transform.position = new Vector3(transform.position.x, targetBoard.transform.position.y, transform.position.z);
+            //}
+
+            
+            //else
+            //{
+             //  airTravel = false;
+            //}
 
         }
     }
